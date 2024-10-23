@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eministar Support - Kontakt und FAQ">
+    <title>Eministar Support</title>
+    <link rel="icon" href="logo.ico" type="image/x-icon">
+    <style>
+        /* Global Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', sans-serif;
+            background-color: #121212; /* Dunkler Hintergrund */
+            color: #e0e0e0; /* Helle Schrift */
+            scroll-behavior: smooth;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e1e1e, #383838);
+            padding: 80px 20px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1s ease-in;
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            margin: 0;
+            transition: transform 0.5s;
+        }
+
+        header h1:hover {
+            transform: scale(1.05);
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center; /* Zentriert die Links */
+            align-items: center;
+            background: #1e1e1e;
+            padding: 15px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center; /* Zentrierte Navigation */
+            flex-wrap: wrap; /* Flex-wrap für mobile Ansicht */
+        }
+
+        .nav-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: background 0.3s ease, color 0.3s ease;
+            margin: 5px; /* Abstand für mobile Ansicht */
+        }
+
+        .nav-links a:hover {
+            background: #383838;
+            color: #007aff;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background: #e0e0e0;
+            margin: 4px;
+            transition: 0.4s;
+        }
+
+        /* Main Container */
+        .container {
+            padding: 40px;
+            text-align: center;
+            animation: slideIn 1s ease-in;
+        }
+
+        .container h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #fff;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background: #1f1f1f; /* Dunkle Box */
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            max-width: 600px; /* Maximale Breite */
+            position: relative;
+            overflow: hidden; /* Overflow für Animation */
+        }
+
+        .faq:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .faq-title {
+            font-size: 1.8em;
+            color: #007aff;
+            margin: 10px 0;
+            cursor: pointer;
+            position: relative;
+            padding: 10px;
+            transition: color 0.3s;
+        }
+
+        .faq-title:hover {
+            color: #ffeb3b; /* Gelb bei Hover */
+        }
+
+        .faq-content {
+            display: none;
+            color: #ddd;
+            padding: 10px 0;
+            animation: fadeIn 0.5s ease;
+        }
+
+        /* Kontaktformular */
+        .contact-form {
+            background: #1f1f1f;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px; /* Maximale Breite */
+            text-align: left;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #555;
+            background: #2a2a2a;
+            color: #e0e0e0;
+            transition: border 0.3s;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: #007aff; /* Akzentfarbe bei Fokus */
+            outline: none;
+        }
+
+        .contact-form button {
+            background: #007aff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+            display: block;
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+
+        .contact-form button:hover {
+            background: #0051a8;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 50px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Standardmäßig ausblenden */
+                flex-direction: column; /* Vertikal anordnen */
+                position: absolute;
+                top: 60px; /* Position unterhalb der Navigation */
+                left: 0;
+                background: #1e1e1e;
+                width: 100%;
+                z-index: 999; /* Über anderen Inhalten */
+            }
+
+            .nav-links a {
+                margin: 10px 0; /* Abstand vertikal */
+            }
+
+            .hamburger {
+                display: flex; /* Hamburger-Menü anzeigen */
+            }
+
+            /* Hamburger Menu aktiv */
+            .nav-active {
+                display: flex; /* Anzeigen bei Aktivierung */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Eministar Support</h1>
+        <p>Hier findest du Unterstützung und kannst uns kontaktieren!</p>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">Über uns</a>
+            <a href="news.html">News</a>
+            <a href="portfolio.html">Socials</a>
+            <a href="support.html">Support</a>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <h2>FAQ</h2>
+        <div class="faq" onclick="toggleFAQ(this)">
+            <div class="faq-title">Was ist Eministar?</div>
+            <div class="faq-content">
+                Eministar ist ein Influencer auf TikTok, der spannende Inhalte teilt und mit seinen Followern interagiert.
+            </div>
+        </div>
+        <div class="faq" onclick="toggleFAQ(this)">
+            <div class="faq-title">Wie kann ich Eministar kontaktieren?</div>
+            <div class="faq-content">
+                Du kannst uns über das Kontaktformular weiter unten erreichen oder direkt über unsere Social-Media-Kanäle.
+            </div>
+        </div>
+        <div class="faq" onclick="toggleFAQ(this)">
+            <div class="faq-title">Gibt es eine Community?</div>
+            <div class="faq-content">
+                Ja! Trete unserem Discord-Server bei, um mit anderen Followern in Kontakt zu treten.
+            </div>
+        </div>
+
+        <h2>Kontakt</h2>
+        <div class="contact-form">
+            <input type="text" placeholder="Dein Name" required>
+            <input type="email" placeholder="Deine E-Mail" required>
+            <textarea placeholder="Deine Nachricht" rows="5" required></textarea>
+            <button type="submit">Nachricht senden</button>
+            <p>Oder schreibe mir eine E-Mail direkt: <a href="mailto:deinemail@example.com" style="color: #007aff;">deinemail@example.com</a></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 Eministar. Alle Rechte vorbehalten.
+    </footer>
+
+    <script>
+        function toggleFAQ(element) {
+            const content = element.querySelector('.faq-content');
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            content.style.animation = 'fadeIn 0.5s ease';
+            content.style.display = 'block';
+        }
+
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('nav-active');
+        }
+    </script>
+</body>
+</html>

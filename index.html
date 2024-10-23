@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Willkommen bei Eministar - Deinem TikTok Influencer!">
+    <title>Eministar - Willkommen</title>
+    <meta name="github-domain-verification" content="eministar.de">
+    <link rel="icon" href="logo.ico" type="image/x-icon">
+    <style>
+        /* Global Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', sans-serif;
+            background-color: #121212; /* Dunkler Hintergrund */
+            color: #e0e0e0; /* Helle Schrift */
+            scroll-behavior: smooth;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e1e1e, #383838);
+            padding: 80px 20px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1s ease-in;
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            margin: 0;
+            transition: transform 0.5s;
+        }
+
+        header h1:hover {
+            transform: scale(1.05);
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center; /* Zentriert die Links */
+            align-items: center;
+            background: #1e1e1e;
+            padding: 15px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center; /* Zentriert die Links */
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: background 0.3s ease, color 0.3s ease;
+            margin: 5px; /* Abstand für mobile Ansicht */
+        }
+
+        .nav-links a:hover {
+            background: #383838;
+            color: #007aff;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .bar {
+            height: 3px;
+            width: 25px;
+            background-color: #e0e0e0;
+            margin: 4px 0;
+            transition: 0.3s;
+        }
+
+        /* Main Container */
+        .container {
+            padding: 40px;
+            text-align: center;
+            animation: slideIn 1s ease-in;
+            margin: 20px 0; /* Abstand zwischen Containern */
+        }
+
+        /* Styled Hero Sections */
+        .hero {
+            background: linear-gradient(135deg, rgba(30, 30, 30, 0.8), rgba(56, 56, 56, 0.8)), url('hero-image.jpg') no-repeat center center/cover; /* Hintergrundbild */
+            border-radius: 10px;
+            padding: 60px 20px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .hero:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero h2 {
+            font-size: 3em;
+            margin: 0;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            animation: fadeIn 1s ease-in;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-top: 20px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Button */
+        .hero a {
+            display: inline-block;
+            background: #007aff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: background 0.3s ease, transform 0.3s ease;
+            margin-top: 30px;
+            font-size: 1.2em;
+        }
+
+        .hero a:hover {
+            background: #0051a8;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 50px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Versteckt die Links standardmäßig */
+                flex-direction: column;
+                width: 100%;
+                background-color: #1e1e1e;
+                position: absolute;
+                top: 60px; /* Position unter der Navigation */
+                left: 0;
+                z-index: 1000;
+            }
+
+            .nav-links.active {
+                display: flex; /* Zeigt die Links an, wenn aktiv */
+            }
+
+            .hamburger {
+                display: flex; /* Zeigt das Hamburger-Menü an */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Willkommen bei Eministar!</h1>
+        <p>Dein Lieblingsinfluencer auf TikTok.</p>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="hamburger" id="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="about.html">Über uns</a>
+            <a href="portfolio.html">Socials</a>
+            <a href="news.html">News</a>
+            <a href="support.html">Support</a>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <div class="hero">
+            <h2>Entdecke spannende Inhalte</h2>
+            <p>Folge Eministar für die neuesten Trends und aufregende Videos!</p>
+            <a href="portfolio.html">Folge uns</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="hero">
+            <h2>Schreib uns eine Mail!</h2>
+            <p>Du brauchst Hilfe? Dann schreib uns doch eine E-Mail!</p>
+            <a href="support.html">Zum Support</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 Eministar. Alle Rechte vorbehalten. Es gelten unsere <a href="agb.html">AGB</a>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

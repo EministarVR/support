@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Neuigkeiten von Eministar">
+    <title>News - Eministar</title>
+    <link rel="icon" href="logo.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+    /* Global Styles */
+    body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', sans-serif;
+            background-color: #121212; /* Dunkler Hintergrund */
+            color: #e0e0e0; /* Helle Schrift */
+            scroll-behavior: smooth;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e1e1e, #383838);
+            padding: 80px 20px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1s ease-in;
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            margin: 0;
+            transition: transform 0.5s;
+        }
+
+        header h1:hover {
+            transform: scale(1.05);
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center; /* Zentriert die Links */
+            align-items: center;
+            background: #1e1e1e;
+            padding: 15px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center; /* Zentriert die Links */
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: background 0.3s ease, color 0.3s ease;
+            margin: 5px; /* Abstand für mobile Ansicht */
+        }
+
+        .nav-links a:hover {
+            background: #383838;
+            color: #007aff;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .bar {
+            height: 3px;
+            width: 25px;
+            background-color: #e0e0e0;
+            margin: 4px 0;
+            transition: 0.3s;
+        }
+
+        /* Hauptbereich */
+        .container {
+            max-width: 1200px;
+            margin: 80px auto 40px;
+            padding: 20px;
+        }
+
+        .news-title {
+            text-align: center;
+            color: #2196F3; /* Farbe der Titel */
+        }
+
+        /* News-Boxen */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .news-box {
+            background-color: #1f1f1f;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .news-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .news-box img {
+            width: 100%;
+            height: 180px;
+            border-radius: 8px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .news-box h3 {
+            margin: 0 0 10px;
+            font-weight: 600;
+            color: #2196F3;
+        }
+
+        .news-box p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .read-more {
+            padding: 10px 15px;
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .read-more:hover {
+            background-color: #1976D2;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 14px;
+            color: #888;
+            margin-top: 40px;
+        }
+
+        .footer a {
+            color: #61dafb;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+       
+        <h1>Eministar Support</h1>
+        <p>Hier findest du Unterstützung und kannst uns kontaktieren!</p>
+    </header>
+    <nav>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">Über uns</a>
+            <a href="news.html">News</a>
+            <a href="portfolio.html">Socials</a>
+            <a href="support.html">Support</a>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="news-title">Aktuelle Projekte von Eministar</h1>
+        <div class="news-grid">
+            <!-- News-Box 1 -->
+            <div class="news-box">
+                <img src="film.png" alt="Film Cest la vie">
+                <h3>Eigener Film: Cest la vie</h3>
+                <p>Eministar arbeitet an seinen neuesten Film "Cest la vie". Ein berührendes Drama, das das Leben und die Herausforderungen junger Menschen thematisiert.</p>
+                <a href="nachricht.html" class="read-more">Weiterlesen</a>
+            </div>
+
+            <!-- News-Box 2 -->
+            <div class="news-box">
+                <img src="no_enemies.png" alt="Song No Enemies">
+                <h3>Eigener Song: No Enemies</h3>
+                <p>Hört euch Eministars neuen Song "No Enemies" an! Ein kraftvoller Track, der für Zusammenhalt und Freundschaft steht. Jetzt auf allen Streaming-Plattformen verfügbar!</p>
+                <a href="nachricht.html" class="read-more">Weiterlesen</a>
+            </div>
+
+            <!-- News-Box 3 -->
+            <div class="news-box">
+                <img src="emini_bot.png" alt="EminiBot Update">
+                <h3>EminiBot Update</h3>
+                <p>Das neueste Update für EminiBot ist da! Mit verbesserten Funktionen und einem benutzerfreundlicheren Interface. Holt euch das Update und erlebt die neuen Features!</p>
+                <a href="nachricht.html" class="read-more">Weiterlesen</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Eministar | <a href="agb.html">AGB</a> </p>
+    </footer>
+</body>
+</html>
