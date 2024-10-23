@@ -281,13 +281,13 @@
         </div>
 
         <h2>Kontakt</h2>
-        <div class="contact-form">
-            <input type="text" placeholder="Dein Name" required>
-            <input type="email" placeholder="Deine E-Mail" required>
-            <textarea placeholder="Deine Nachricht" rows="5" required></textarea>
+        <form class="contact-form" action="https://formspree.io/f/mvgogwep" method="POST">
+            <input type="text" name="name" placeholder="Dein Name" required>
+            <input type="email" name="email" placeholder="Deine E-Mail" required>
+            <textarea name="message" placeholder="Deine Nachricht" rows="5" required></textarea>
             <button type="submit">Nachricht senden</button>
             <p>Oder schreibe mir eine E-Mail direkt: <a href="mailto:deinemail@example.com" style="color: #007aff;">deinemail@example.com</a></p>
-        </div>
+        </form>
     </div>
 
     <!-- Footer -->
